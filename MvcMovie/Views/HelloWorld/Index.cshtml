@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Movie List";
+}
+
+<html>
+@{
+    var statesList = new List<SelectListItem>();
+    statesList.Add(new SelectListItem { Text = "MN", Value = "mn" });
+    statesList.Add(new SelectListItem { Text = "FL", Value = "fl" });
+}
+<body>
+    @Html.DropDownList("Choose your state", statesList)
+</body>
+</html>

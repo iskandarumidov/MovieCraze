@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie.Core", "MvcMovie.Core\MvcMovie.Core.csproj", "{92A56DC4-8F98-4677-99F7-10E7234675AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie.DataService", "MvcMovie.DataService\MvcMovie.DataService.csproj", "{5A3028AF-54CC-4E5C-893F-57248A312360}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A56DC4-8F98-4677-99F7-10E7234675AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A56DC4-8F98-4677-99F7-10E7234675AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A56DC4-8F98-4677-99F7-10E7234675AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A56DC4-8F98-4677-99F7-10E7234675AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A3028AF-54CC-4E5C-893F-57248A312360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3028AF-54CC-4E5C-893F-57248A312360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3028AF-54CC-4E5C-893F-57248A312360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3028AF-54CC-4E5C-893F-57248A312360}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6894DDEC-D9DD-441F-8064-74EF10604FAB}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://wkfs-scsu-g4.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MvcMovie\\MvcMovie.csproj
+		SccProjectName1 = MvcMovie
+		SccLocalPath1 = MvcMovie
+		SccProjectUniqueName2 = MvcMovie.Core\\MvcMovie.Core.csproj
+		SccProjectName2 = MvcMovie.Core
+		SccLocalPath2 = MvcMovie.Core
+		SccProjectUniqueName3 = MvcMovie.DataService\\MvcMovie.DataService.csproj
+		SccProjectName3 = MvcMovie.DataService
+		SccLocalPath3 = MvcMovie.DataService
+	EndGlobalSection
+EndGlobal

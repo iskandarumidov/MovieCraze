@@ -1,0 +1,103 @@
+﻿@model MvcMovie.Models.ContactModel
+@{
+    ViewBag.Title = "The Contact page - Please feel free to contact us at any time 24/7";
+}
+
+@section styles{
+    <link href="@Url.Content("~/Content/Contact.css")" rel="stylesheet" type="text/css" />
+}
+
+@section scripts
+{
+    <script src="~/Scripts/Custom/contact.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    @{
+        string userName = System.Web.Configuration.WebConfigurationManager.AppSettings["GoogleMapsApiKey"];
+        string googleMapsFinalSrc = "https://maps.googleapis.com/maps/api/js?key=" + userName + "&callback=myMap";
+        <script src=@googleMapsFinalSrc></script>
+
+    }
+}
+
+
+<div class="container">
+    <div class="introContainer">
+        <h1>Contact</h1>
+        <p>Swing by for a cup of coffee, or leave us a message:</p>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div id="map" style="width:100%;height:500px"></div>
+            <img id="factoryImg" src="~/Content/Images/factory.jpg">
+        </div>
+        <div class="column">
+            <img class="contactIcon" src="~/Content/Images/notebook-with-contacts.png">
+            <img class="contactIcon" src="~/Content/Images/personal-card-outlined-tool.png">
+
+            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { name = "contactForm", onsubmit = "return onSubmitForm();" }))
+    {
+        @*@Html.ValidationSummary(true)*@
+        @Html.Label("FirstName", "First Name");
+        @Html.TextBoxFor(model => model.FirstName, new { @placeholder = "Your first name" });
+        @Html.ValidationMessage("FirstName");
+
+        @Html.Label("LastName", "Last Name");
+        @Html.TextBoxFor(model => model.LastName, new { @placeholder = "Your last name" });
+        @Html.ValidationMessage("LastName");
+
+        @Html.Label("State");
+        @Html.TextBoxFor(model => model.State, new { @placeholder = "Your state" });
+        @Html.ValidationMessage("State");
+
+        @Html.Label("Phone");
+        @Html.TextBoxFor(model => model.Phone, new { @placeholder = "Your phone" });
+        @Html.ValidationMessage("Phone");
+
+        @Html.Label("Email");
+        @Html.TextBoxFor(model => model.Email, new { @placeholder = "Your email" });
+        @Html.ValidationMessage("Email");
+
+
+
+        @Html.Label("Password");
+        <div id="input_container">
+            @Html.PasswordFor(model => model.Password, new { @placeholder = "Your password", onkeyup = "validatePasswdConditions()", onfocus = "validatePasswdConditions()", data_toggle = "tooltip", data_placement = "right", data_html = "true", title = "" });
+            <button id="passVisibilityBtn">show</button>
+        </div>
+        @Html.ValidationMessage("Password");
+
+        @Html.Label("Password2");
+        @Html.PasswordFor(model => model.Password2, new { @placeholder = "Please retype password" });
+        @Html.ValidationMessage("Password2");
+
+        @Html.Label("Check18", "Are you 18?");
+        @Html.CheckBoxFor(model => model.Check18, new { onclick = "addBox()" });
+//@Html.ValidationMessage("Check18");
+        <br />
+
+        @Html.Label("Age", new { id = "AgeLabel" });
+        @Html.TextBoxFor(model => model.Age, new { @placeholder = "Your age" });
+        @Html.ValidationMessage("Age");
+
+        @Html.Label("ConsoleDbx", "Game Console");
+        <select id='ConsoleDbx' name='ConsoleDbx'>
+            <option value='---' selected='selected'>---
+            <option value='PS4'>PS4
+            <option value='XBox One'>XBox One
+        </select>
+        @Html.Label("GamesDbx", "Games");
+        <select id='GamesDbx' name='GamesDbx'></select>
+
+        <p>Do you agree to our terms and conditions?</p>
+        @Html.Label("YesRbtn", "Yes");
+        @Html.RadioButton("AgreeRbtn", "Yes", new { id = "YesRbtn" });
+        @Html.Label("NoRbtn", "No");
+        @Html.RadioButton("AgreeRbtn", "No", new { id = "NoRbtn", data_toggle = "tooltip", data_placement = "right", title = "Please agree to our Terms and Conditions" });
+        <input id="SubmitBtn" type="submit" value="Submit Form">
+}
+        </div>
+    </div>
+</div>
+@*@Scripts.Render("~/bundles/jqueryval");*@

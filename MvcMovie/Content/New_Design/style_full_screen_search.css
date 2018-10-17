@@ -1,0 +1,329 @@
+.firstPanel{
+	margin-top: 1%;
+}
+
+.liveSearchPopularityIcon{
+	height: 3%;
+	width: 3%;
+	padding-right: 5px;
+}
+
+
+.liveSearchThumbnail{
+	float: left;
+	height: auto;
+	width: 80%;
+	max-height: 75px;
+	/* max-width: auto; */
+	
+}
+
+.liveSearchThumbnailContainer{
+	max-height: 75px;
+}
+
+.panel{
+	background-color: #414343 !important;
+	color: white;
+	width: 95%;
+	height: 20%;
+	transition: background-color 0.4s;
+	border-radius: 10px;
+	/* padding-left: 20px; */
+	margin-left: 20px;
+}
+
+.panel:hover{
+	background-color: #C42C2C !important;
+}
+
+
+body {
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.overlayLiveSearch {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+	background-color: #202121;
+	opacity: 0.9;
+	font-family: 'Inconsolata', monospace;
+}
+
+.overlay-content {
+    /* position: relative; */
+    top: 46%;
+    
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlayLiveSearch .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+	line-height: 20px;
+	z-index: 9999;
+}
+
+.overlayLiveSearch .closebtn:hover {
+    color: #ccc;
+}
+
+.overlayLiveSearch input[type=text] {
+    padding: 35px;
+    font-size: 70px;
+    border: none;
+    float: left;
+	color: white;
+	top: -50%;
+	background-color: #202121 !important;
+	/* margin-top: -3em; */
+	width: 90% !important;
+	/* position: absolute; */
+	top: 20px;
+	left: 0;
+	margin-bottom: 10px;
+	grid-column: 1/1;
+	
+}
+
+.overlayLiveSearch input[type=text]:hover {
+    background: #f1f1f1;
+	
+}
+
+
+/* input[type=text]:focus:not([readonly]) + label {
+	color: #ed0121; 
+} */
+
+input[type=text]:focus:not([readonly]) {
+	border-bottom: 1px solid #ed0121;
+	box-shadow: 0 1px 0 0 #ed0121;
+}
+
+.orig{
+	background: rgba(33,45,57,0.8) !important;
+	font: normal normal 300 normal 17px / normal "Gotham SSm A", "Gotham SSm B", sans-serif !important;
+	height: 20px !important;
+	padding: 15px;
+	padding-left: 50px;
+	margin-left: 5px;
+	border: none !important;
+	background-color: #C62B2B !important;
+	background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/6983-200.png") !important;
+    background-position: 10px 10px !important; 
+    background-repeat: no-repeat !important;
+	background-size: 30px 30px !important;
+	color: white !important;
+	border-radius: 5px 5px 5px 5px !important;
+	/* border-style: none !important; */
+	max-width: 190px;
+	margin-right: 10px;
+}
+.orig:focus{
+	border: none !important;
+}
+.orig:hover{
+	background-color: #E90D2B !important;
+	transition: background-color 0.5s !important;
+	border: none !important;
+}
+.orig::placeholder{
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+.panel-body{
+	display: grid;
+	/* grid-template-columns: 100px 350px 600px; */
+	grid-template-columns: 8% 30% 50% auto;
+	text-align: left;
+	/* max-height: 110px; */
+	
+}
+
+.liveSearchContainer{
+	grid-column: 1 / 1;
+	display: flex;
+}
+
+.liveSearchParamContainer{
+	grid-column: 2 / 2;
+	border-right-color: white;
+    border-right-width: 4px;
+    border-right-style: dotted;
+}
+
+.liveSearchDescription{
+	grid-column: 3 / 3;
+	padding-left: 5px;
+	border-right-color: white;
+    border-right-width: 4px;
+    border-right-style: dotted;
+}
+
+/* .liveSearchIsInStock{
+	grid-column: 4 / 4;
+	font-weight: bold;
+	padding-left: 5px;
+} */
+
+/* .liveSearchIsNotInStock */
+
+/* .liveSearchRequest{
+	grid-column: 4 / 4;
+}
+
+.liveSearchAddToCart{
+	grid-column: 4 / 4;
+} */
+.liveSearchActionLinks{
+		grid-column: 4 / 4;
+		padding-left: 5px;
+}
+
+#liveSearchInputAndOptionsContainer{
+	display: grid;
+	grid-template-columns: 70% 200px;
+}
+
+#liveSearchOptionsContainer{
+	grid-column: 2 / 2;
+	text-align: left;
+}
+
+/* //Using a Sprite */
+.star-ratings-sprite {
+	background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+	font-size: 0;
+	height: 21px;
+	line-height: 0;
+	overflow: hidden;
+	text-indent: -999em;
+	width: 110px;
+	
+	/* for number of votes */
+	display: inline-block;
+    vertical-align: text-bottom;
+}
+.star-ratings-sprite-rating {
+	background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+	background-position: 0 100%;
+    width: 33%;
+    float: left;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png);
+    background-position-x: 0px;
+    height: 21px;
+    background-position-y: 100%;
+  }
+  
+  /* CheckBoxes */
+input[type=checkbox].css-checkbox {
+	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:22px;
+	height:17px; 
+	display:inline-block;
+	line-height:17px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:17px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -17px;
+}
+label.css-label {
+	background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_314a66eb1641f8832a7ada19bbf96697.png);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* My own styling, not from the library */
+#searchInStockOnlyChbxLabel{
+	color: white;
+}
+
+/* For Dropdowns */
+div.ui.search{
+/* 	min-height: 1em !important;
+	font-size: 20px; */
+	background-color: #d23737 !important;
+	
+}
+input.search{
+	height: 40px !important;
+	/* font-size: 20px; */
+}
+
+div.ui.search select{
+	color: white;
+	background-color: #d23737;	
+}
+
+div.ui.search + div.default.text{
+	color: white;
+}
+
+a.ui.label.transition{
+	color: white;
+	background-color: #333;
+}
+
+li form a {
+    padding: 15px;
+    display: inline;
+    color: white;
+}
+
+/*li form {
+    margin-top: 13px;
+
+}*/
+
+#logOffBtn {
+    color: white;
+}
+
+#logOffBtn:hover {
+    color: darkgray;
+}
+
+#registerLink, #loginLink {
+    display: inline;
+}
+
+#liveSearchLi + li {
+    margin-top: 13px;
+}
+
+.ui.search.dropdown {
+    color: black !important;
+}
+/* End for dropdowns */
+
+/* End of CheckBox styling */
+}

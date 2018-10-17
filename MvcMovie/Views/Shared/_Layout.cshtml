@@ -1,0 +1,197 @@
+﻿@*<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("MVC Movie", "Index", "Movies", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("styles", required: false)
+</body>
+</html>*@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Online Movies - WorldMovies</title>
+    @*<link href="@Url.Content("~/Content/New_Design/")" rel="stylesheet" type="text/css" />*@
+    <link rel="stylesheet" href='@Url.Content("~/fonts/glyphicons-halflings-regular.woff")'>
+    <link rel="stylesheet" href='@Url.Content("~/fonts/glyphicons-halflings-regular.eot")'>
+    <link rel="stylesheet" href='@Url.Content("~/fonts/glyphicons-halflings-regular.svg")'>
+    <link rel="stylesheet" href='@Url.Content("~/fonts/glyphicons-halflings-regular.ttf")'>
+    <link rel='stylesheet prefetch' href='@Url.Content("~/Content/New_Design/bootstrap.min.changed.css")'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css'>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Arvo:400,700'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Kreon:300,400,700'>
+
+
+    <!-- For live search: -->
+    <link href="@Url.Content("~/Content/New_Design/mdb.min.css")" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="@Url.Content("~/Content/New_Design/style_full_screen_search.css")" rel="stylesheet">
+    <link rel="stylesheet" href='@Url.Content("~/Content/New_Design/style.css")'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery.actual/1.0.17/jquery.actual.min.js'></script>
+    @*<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.1/jquery.scrollTo.min.js'></script>*@
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+
+
+    <!-- Two libs for dropdowns -->
+    @*<script src="js/dropdown.min.js"></script>
+        <script src="js/transition.min.js"></script>*@
+
+    <script src="@Url.Content("~/Scripts/Custom/New_Design/index.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Custom/New_Design/full_screen_search.js")"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.js"></script>
+</head>
+
+<body>
+    @*Nav*@
+    <div id="menu" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div id="0-font" class="container">
+            <div class="navbar-header visible-xs">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><h2>TastyBox</h2></a>
+            </div><!-- navbar-header -->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div class="hidden-xs" id="logo">
+                            <a href="#header">
+                                <img src="https://41.media.tumblr.com/3172b0af03ae569209fe2b15c2757d78/tumblr_ntjox0Wmuv1ud7rr3o1_100.png" alt="">
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><a href="/Home/About">About</a></li>
+                    <li><a href="/ContactModels">My Contact Forms</a></li>
+                    @*<li><a href="#facts">Browse</a></li>*@
+                    <li><a href="/Theater/Show">Theaters</a></li>
+                    @*<li><a href="#special-offser">Special Offers</a></li>*@
+                    <li id="liveSearchLi">
+                        <div id="myOverlay" class="overlayLiveSearch">
+                            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+                            <div class="overlay-content">
+                                <form action="/action_page.php">
+                                    <div id="liveSearchInputAndOptionsContainer">
+                                        <input id="liveSearchBox" class="liveSearch" type="text" autocomplete="off" placeholder="Search.." name="search">
+                                        <div id="liveSearchOptionsContainer">
+                                            <input type="checkbox" name="searchInStockOnlyChbx" id="searchInStockOnlyChbx" class="css-checkbox">
+                                            <label id="searchInStockOnlyChbxLabel" for="searchInStockOnlyChbx" class="css-label">In-stock only</label>
+                                            <select class="ui search dropdown">
+                                                <option value="">---</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div id="searchResultsContainer">
+                                    <!-- Search Results -->
+                                </div>
+                            </div>
+                        </div>
+                        <input class="orig" type="text" onclick="openSearch()" placeholder="Search..">
+                    </li>
+                    <li>
+                        @Html.Partial("_LoginPartial")
+                    </li>
+
+                    <!---->@*<li><a class="loginButton" href="#special-offser">Login/Signup</a></li>*@
+                    <li style="display:none;"><a href="#header"></a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div><!-- container -->
+    </div><!-- menu -->
+
+
+
+
+    @RenderBody()
+
+
+
+
+
+    <footer id="footer" class="dark-wrapper">
+        <section class="ss-style-top"></section>
+        <div class="container inner">
+            <div class="row" id="footerText">
+                <div class="col-sm-6">
+                    &copy; Copyright MovieApp 2018
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="social-bar">
+                        <a href="#" class="fa fa-instagram tooltipped" title="instagram"></a>
+                        <a href="#" class="fa fa-youtube-square tooltipped" title="youtube"></a>
+                        <a href="#" class="fa fa-facebook-square tooltipped" title="facebook"></a>
+                        <a href="#" class="fa fa-twitter-square tooltipped" title="twitter"></a>
+                        <a href="#" class="fa fa-google-plus-square tooltipped" title="google+"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </footer>
+    @RenderSection("Scripts", false)
+    @RenderSection("Styles", false)
+</body>
+</html>
+
+
+
+

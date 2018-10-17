@@ -1,0 +1,8 @@
+﻿#disksImg {
+    max-height: 50%;
+    max-width: 70%;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+}

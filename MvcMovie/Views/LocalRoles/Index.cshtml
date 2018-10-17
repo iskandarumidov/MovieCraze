@@ -1,0 +1,108 @@
+﻿@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.EntityFramework
+@using MvcMovie.Models
+@model MvcMovie.Models.LocalRoles.UsersRolesModel
+@section styles{
+    <link href="@Url.Content("~/Content/LocalRoles.css")" rel="stylesheet" type="text/css" />
+}
+@section scripts{
+    <script src="~/Scripts/Custom/updateUserRole.js"></script>
+    <script src="~/Scripts/Custom/modal.js"></script>
+}
+@{
+    ViewBag.Title = "Index";
+
+    var rolesList = Model.Roles.ToList();
+    var usersList = Model.Users.ToList();
+    int rolesNum = rolesList.Count;
+    ApplicationDbContext context = new ApplicationDbContext();
+    var identityStore = new UserStore<ApplicationUser>(context);
+    var userManager = new UserManager<ApplicationUser>(identityStore);
+}
+<table class="table">
+    <tr>
+        <th scope="col">Users</th>
+
+        @foreach (var currentRole in rolesList)
+        {
+            <th scope="col">@currentRole.Name</th>//Header for column
+        }
+        <th scope="col"><button id="showModalRoleBtn" type="button" class="btn btn-danger">New Role</button></th>
+    </tr>
+
+    @foreach (var currentUser in usersList)
+    {
+        <tr>
+            <th scope="row">@currentUser.UserName</th>
+            @{var currentUserRoles = currentUser.Roles;
+                foreach (var currentRole in rolesList)
+                {
+                    if (userManager.IsInRole(currentUser.Id, currentRole.Name))
+                    {
+                        <td>
+                            @*Yes*@
+                            <input class="roleCheckBox" type="checkbox" name="@currentUser.UserName" value="@currentRole.Name" checked="checked" />
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @*No*@
+                            <input class="roleCheckBox" type="checkbox" name="@currentUser.UserName" value="@currentRole.Name" />
+                        </td>
+                    }
+                }
+            }
+        </tr>
+    }
+    <tr>
+        <th>
+
+            <button id="showModalUserBtn" type="button" class="btn btn-danger">New User</button></th>
+        @for (int i = 0; i < rolesNum; i++)
+        {
+            <td></td>
+        }
+    </tr>
+
+</table>
+
+<h3>Advanced Search</h3>
+
+@using (Html.BeginForm("Index", "LocalRoles", FormMethod.Post, new { name = "indexSearchForm" }))
+{
+    //@Html.Label("AdvancedSearchModel_Keyword", "Sort by Keyword");
+    //@Html.TextBoxFor(model => , new { @placeholder = "Keyword.." });
+    @Html.Label("AdvancedSearchModel_Keyword", "Sort by Keyword");
+    @Html.TextBoxFor(model => Model.AdvancedSearchModel.Keyword, new { @placeholder = "Keyword.." });
+    for (int i = 0; i < rolesNum; i++)
+    {
+        //var currentRoleHolder = Model.AdvancedSearchModel.RoleHolders[i];
+
+
+
+        @Html.CheckBoxFor(m => Model.AdvancedSearchModel.RoleHolders[i].IsChecked) @rolesList[i].Name
+        @Html.HiddenFor(m => Model.AdvancedSearchModel.RoleHolders[i].RoleName, new { @Value = rolesList[i].Name })
+    }
+    <input id="submitBtn" type="submit" value="Submit Form" />
+}
+
+<div class="modal fade" id="myModal" role="dialog" @*data-url='@Url.Action("Create")'*@>
+    <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">New User</h4>
+            </div>
+            <div id="modalBody" class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      
+    </div>
+</div>

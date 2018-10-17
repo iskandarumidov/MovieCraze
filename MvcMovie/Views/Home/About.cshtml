@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "The About page - learn everything about the team that maintains this app";
+}
+
+@section styles{
+    <link href="@Url.Content("~/Content/Team.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Team.css")" rel="stylesheet" type="text/css" />
+}
+
+@*<h2>@ViewBag.Title.</h2> - I am adding the hard-coded values*@
+<h1>About</h1>
+<h3>@ViewBag.Message</h3>
+<div>
+    <p>Our development team consists of the following three people: </p>
+    <ol>
+        <li>Akeem</li>
+        <li>Lakshmipriya</li>
+        <li>Iskandar</li>
+    </ol>
+    <p>All three of us are students of SCSU.</p>
+    <p>The technologies used in the project so far are: </p>
+    <ul>
+        <li>Razor View Engine</li>
+        <li>C#</li>
+        <li>JS</li>
+        <li>CSS</li>
+    </ul>
+    <a href="https://google.com/search?q=Saint+Cloud+State+University" target="_blank">Learn more!</a>
+</div>
+<img id="teamImg" src="~/Content/Images/team.jpg">
+

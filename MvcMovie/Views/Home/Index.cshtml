@@ -1,0 +1,127 @@
+﻿@*@{
+        ViewBag.Title = "Home Page";
+    }
+
+    @section styles{
+        <link href="@Url.Content("~/Content/Index.css")" rel="stylesheet" type="text/css" />
+    }
+        <div class="jumbotron">
+            <h1>The DVD Store</h1>
+            <p class="lead">Welcome to our online store! You can purchase DVDs and BluRays with movies directly from our website. Our library of movies includes many genres, ranging from dramas to comedies. Enjoy!</p>
+            <div class="imgContainer">
+                <img id="disksImg" src="~/Content/Images/disks.jpeg">
+                <p><a id="learnMoreBtn" href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <!-- SLIDER TEST -->
+    <div class="container">
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active" style="background-image: url(https://images.pexels.com/photos/566266/pexels-photo-566266.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)  ">
+                </div>
+                <div class="item" style="background-image: url(https://images.pexels.com/photos/267961/pexels-photo-267961.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)  ">
+                </div>
+                <div class="item" style="background-image: url(https://images.pexels.com/photos/432506/pexels-photo-432506.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)  ">
+                </div>
+                <div class="item" style="background-image: url(https://images.pexels.com/photos/270837/pexels-photo-270837.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)  ">
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!-- SLIDER TEST END-->
+</div>
+<!-- /#header -->
+<div id="story" class="light-wrapper">
+    <section class="ss-style-top"></section>
+    <div class="container inner">
+        <h2 class="section-title text-center">Our Story</h2>
+        <p class="lead main text-center" id="missionStatement">We are an online movie store taking the world by storm.</p>
+    </div>
+    <!-- /.container -->
+    <section class="ss-style-bottom"></section>
+</div><!-- #story -->
+<div id="facts" class="parallax parallax2 facts">
+    <div class="bg-overlay"></div>
+    <div class="container inner">
+        <div class="row text-center services-3" id="servicesRow">
+            <div class="col-sm-3" id="firstService">
+                <div class="col-wrapper">
+                    <h4>250,000+</h4>
+                    <p>Movies</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="col-wrapper">
+                    <h4>20,000+</h4>
+                    <p>TV Shows</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="col-wrapper">
+                    <h4>100,000+</h4>
+                    <p>Happy Users</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="col-wrapper">
+                    <h4>300,000+</h4>
+                    <p>Orders</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</div><!-- #facts -->

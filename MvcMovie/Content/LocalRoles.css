@@ -1,0 +1,128 @@
+﻿body {
+    color: white;
+}
+
+#submitBtn {
+    display: block;
+}
+
+table {
+    margin-top: 3%;
+    font-size: 20px !important;
+}
+
+th[scope="row"] {
+    border-right: 1px dashed #dddddd;
+}
+
+table tr:first-child td, th[scope="col"] {
+    border-top: none !important;
+}
+
+th[scope="col"], td {
+    text-align: center;
+}
+td {
+    border-right: 1px dashed #dddddd;
+}
+
+table tr:last-child td {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+table tr:last-child:hover {
+        background-color: #333333
+}
+
+table tr:last-child td:hover {
+    background-color: #333333
+}
+
+.modal {
+    color: black !important;
+}
+
+.form-horizontal  div label{
+    color: black !important;
+}
+
+.modal-content {
+    background-color: #f4f4f4;
+}
+
+table tr:first-child th:last-child {
+    background-color: #333;
+    border-bottom: none;
+    border-right: none;
+}
+
+table tr:last-child th:first-child {
+    background-color: #333;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    table td, table th { /*This block defines styles for the cells (td) and headings (th) of the table*/
+        border: 2px solid #ddd;
+        text-align: center;
+    }
+
+    table tr { /*This block defines transition parameter for table rows (tr), the transition makes hovering from one cell to another smooth*/
+        transition: ease 0.5s; /* The 'transition' property is used to do gradual changes from white background color to #cce5ff, mentioned in table tr:hover */
+    }
+
+        table tr:hover { /*This block of code defines what will happen if you put the cursor over any row (tr) of the table. If a user hovers any row of the table, the background color of the row will be light-blue*/
+            background-color: #ed0121;
+            transition: ease 0.6s;
+        }
+
+        table tr td:hover { /*If the user hovers any table cell, its background color will turn to another color. Additionally, the previous block of code changes backgroud of the whole <tr>*/
+            background-color: #A9A9A9;
+        }
+
+    table th[scope="col"] {
+        background-color: #CD3333;
+        color: white;
+    }
+
+/*table th[scope="row"] {
+    background-color: #F44336;
+    color: white;
+}*/
+
+#footer {
+    margin-top: 10% !important;
+}
+
+table {
+    margin-top: 10%;
+}
+
+th, td {
+    color: black;
+    font-size: 18px !important;
+}
+
+input[type=checkbox] #submitBtn, #AdvancedSearchModel_Keyword {
+    
+}
+
+form[name="indexSearchForm"] {
+    color: black;
+}
